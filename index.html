@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodie Website</title>
+
+    <style>
+        @font-face {
+            font-family: "Poppins";
+            src: url("./Poppins/Poppins-Regular.ttf");
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            overflow-x: hidden;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        nav {
+            height: auto;
+            width: 100vw;
+            padding: 20px 0px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1E1E1E;
+            position: fixed;
+            top: 0;
+            z-index: 2;
+        }
+
+        nav span {
+            font-family: "Poppins", sans-serif;
+            font-size: 40px;
+            color: #D4AF37;
+            margin-left: 10px;
+            transition: 0.4s;
+        }
+
+        nav span:hover {
+            transform: scale(1.1);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            list-style: none;
+
+        }
+
+        nav ul li {
+            color: white;
+            font-size: 20px;
+            border: 2px solid transparent;
+            padding: 5px 15px;
+            transition: 0.5s;
+            cursor: pointer;
+        }
+
+        nav ul li:hover {
+            border: 2px solid white;
+            border-radius: 10px;
+        }
+
+        nav button {
+            padding: 10px 30px;
+            background-color: rgb(3, 54, 224);
+            border-radius: 20px;
+            color: white;
+            margin-right: 10px;
+            cursor: pointer;
+            border: none;
+            transition: 0.3s;
+            color: antiquewhite;
+            margin-right: 20px;
+        }
+
+        nav button:hover {
+            color: aqua;
+            background-color: rgb(2, 78, 241);
+        }
+
+        .icon {
+            display: none;
+            color: white;
+            margin-right: 20px;
+
+        }
+
+
+        .hero {
+            padding: 10vh 0;
+            height: auto;
+            width: 100vw;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            background: linear-gradient(to right, rgb(57, 59, 63), blue, rgb(0, 56, 209));
+            color: white;
+            margin-top: 11vh;
+
+        }
+
+        .heads {
+            height: 60vh;
+            width: 50vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: aliceblue;
+
+        }
+
+
+        .heads h1 {
+            color: black;
+            font-family: "poppins", sans-serif;
+            font-size: 60px;
+            line-height: 150px;
+            height: auto;
+            width: auto;
+            color: white;
+        }
+
+        .btns {
+            height: auto;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        .btns button {
+            padding: 15px 35px;
+            border-radius: 10px;
+            text-align: center;
+            color: #fdfdfd;
+            font-size: 20px;
+            cursor: pointer;
+            transition: 0.4s;
+            background-color: rgb(46, 43, 43);
+        }
+
+        .btns button:hover {
+            box-shadow: 10px 10px 30px rgb(248, 246, 250);
+            transform: translate(20px);
+        }
+
+        .image {
+            width: 45vw;
+            height: 70vh;
+            flex-shrink: 0;
+            box-shadow: 10px 10px 70px black;
+            overflow: hidden;
+
+
+        }
+
+        .image img {
+            height: 100%;
+            width: 100%;
+            border-radius: 20px;
+        }
+
+        .orders {
+            padding-bottom: 10vh;
+            min-height: 100vh;
+            min-width: 100vw;
+            background: radial-gradient(circle at top right, skyblue, transparent 30%),
+                radial-gradient(circle at bottom left, lightblue, transparent 30%),
+
+                linear-gradient(to right, rgb(97, 102, 114), rgb(48, 48, 102), rgb(6, 45, 153));
+        }
+
+        .all {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .all h1 {
+            padding: 30px 0;
+            color: white;
+            font-size: 80px;
+            text-shadow: 10px 10px 60px rgb(199, 16, 255);
+        }
+
+        .all p {
+            color: rgb(223, 213, 213);
+            font-size: 20px;
+            word-spacing: 10px;
+            letter-spacing: 2px;
+        }
+
+        .all h2 {
+            color: rgb(235, 229, 229);
+            font-size: 50px;
+            padding: 30px 0;
+        }
+
+        .all-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 50px;
+        }
+
+        .box1,
+        .box2,
+        .box3,
+        .box4,
+        .box5,
+        .box6 {
+            width: 30vw;
+            height: 50vh;
+            background: linear-gradient(to right, rgb(57, 59, 63), blue, rgb(0, 56, 209));
+            border-radius: 30px;
+            box-shadow: 5px 5px 30px black;
+            overflow: hidden;
+        }
+
+        .img1,
+        .img2,
+        .img3,
+        .img4,
+        .img5,
+        .img6 {
+            width: 100%;
+            height: 50%;
+            border-radius: 30px;
+            object-fit: cover;
+            overflow: hidden;
+
+        }
+
+        .hasnain {
+            background: linear-gradient(to right, rgb(44, 43, 43), darkblue);
+            width: 100%;
+            height: 50%;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 10%;
+        }
+
+        .hasnain h3,
+        h6,
+        .price {
+            color: white;
+        }
+
+        .hasnain h6 {
+            font-size: 15px;
+        }
+
+        .hasnain button {
+            padding: 10px 25px;
+            border-radius: 30px;
+            transition: 0.5s;
+            cursor: pointer;
+        }
+
+        .hasnain button:hover {
+            box-shadow: 10px 10px 30px rgb(4, 152, 238);
+            transform: scale(1.1);
+        }
+
+        .price {
+            height: 10%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        .price p {
+            color: aqua;
+            font-size: 20px;
+        }
+
+        .about {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 15vh;
+            gap: 20px;
+        }
+
+        .about h1 {
+            font-size: 7vh;
+            color: white;
+        }
+
+        .about h5 {
+            color: white;
+            font-size: 20px;
+            word-spacing: 10px;
+        }
+
+        .alll {
+            display: grid;
+            grid-template-columns: 45vw 45vw;
+            row-gap: 30px;
+        }
+
+        .food,
+        .chef,
+        .delivery,
+        .amazing {
+            height: 25vh;
+            width: 40vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 10%;
+            border-radius: 20px;
+            background: radial-gradient(circle at top right, rgb(10, 103, 190), transparent 30%),
+                radial-gradient(circle at bottom left, rgb(2, 104, 155), transparent 30%);
+            transition: 0.5s;
+
+        }
+
+        .food:hover {
+            box-shadow: 10px 10px 30px orange;
+        }
+
+        .delivery:hover {
+            box-shadow: 10px 10px 30px orange;
+        }
+
+        .chef:hover {
+            box-shadow: 10px 10px 30px orange;
+        }
+
+        .amazing:hover {
+            box-shadow: 10px 10px 30px orange;
+        }
+
+        .food h2 {
+            color: #FFD166;
+            font-size: 30px;
+        }
+
+        .food span {
+            color: white;
+            font-size: 20px;
+        }
+
+        .food p {
+            color: #F5F5F5;
+        }
+
+        .chef h2 {
+            color: #FFD166;
+            font-size: 30px;
+        }
+
+        .chef span {
+            color: white;
+            font-size: 20px;
+        }
+
+        .chef p {
+            color: #F5F5F5;
+        }
+
+        .delivery h2 {
+            color: #FFD166;
+            font-size: 30px;
+        }
+
+        .delivery span {
+            color: white;
+            font-size: 20px;
+        }
+
+        .delivery p {
+            color: #F5F5F5;
+        }
+
+        .amazing h2 {
+            color: #FFD166;
+            font-size: 30px;
+        }
+
+        .amazing span {
+            color: white;
+            font-size: 20px;
+        }
+
+        .amazing p {
+            color: #F5F5F5;
+        }
+
+        .rew {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 30px;
+            margin-top: 10vh;
+
+        }
+
+        .rew h1 {
+            color: white;
+            font-size: 50px;
+        }
+
+        .rew h3 {
+            color: white;
+            word-spacing: 5px;
+        }
+
+        .all-rew {
+            height: 20vh;
+            width: 90vw;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            column-gap: 5vw;
+        }
+
+        .rew1,
+        .rew2,
+        .rew3 {
+            height: 10vh;
+            width: 35vw;
+            background-color: #F5F5F5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 5px;
+            border-radius: 5px;
+            transition: 0.4s;
+            box-shadow: 10px 10px 30px black;
+            border: 5px solid transparent;
+
+        }
+
+        .rew1:hover {
+            border: 5px solid rgb(11, 178, 219);
+        }
+
+        .rew2:hover {
+            border: 5px solid rgb(11, 178, 219);
+        }
+
+        .rew3:hover {
+            border: 5px solid rgb(11, 178, 219);
+        }
+
+        .gallery {
+            margin-top: 10vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .gallery h1 {
+            color: white;
+            font-size: 100px;
+            text-shadow: 20px 20px 100px blueviolet;
+        }
+
+        .gallery h4 {
+            color: white;
+            font-size: 40px;
+        }
+
+        .gallery p {
+            color: white;
+            font-size: 20px;
+            word-spacing: 10px;
+        }
+
+        .all-photos {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .pht1,
+        .pht2 {
+            height: 50vh;
+            width: 45vw;
+            background-color: #e40000;
+            box-shadow: 5px 5px 20px black;
+            border: 3px solid blueviolet;
+            border-radius: 30px;
+        }
+
+        .pht1 img {
+            width: 100%;
+            height: 100%;
+            border-radius: 30px;
+            display: block;
+            object-fit: cover;
+        }
+
+        .pht2 img {
+            width: 100%;
+            height: 100%;
+            border-radius: 30px;
+            display: block;
+            object-fit: cover;
+        }
+
+        .footer {
+            height: auto;
+            width: 100vw;
+            background-color: #1F2937;
+        }
+
+        .arslan {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 2vh;
+        }
+
+        .p1 {
+            margin-top: 30px;
+            color: white;
+            padding: 3vh 0px;
+            border-bottom: 2px solid rgb(206, 198, 198);
+            border-top: 2px solid rgb(196, 189, 189);
+            display: block;
+            text-align: center;
+        }
+
+        .p1 b {
+            word-spacing: 20px;
+            cursor: pointer;
+        }
+
+
+        .p1 b:hover {
+            color: #D4AF37;
+        }
+
+        .p2 {
+            color: white;
+            padding: 3vh 0px;
+            display: block;
+            text-align: center;
+            word-spacing: 10px;
+        }
+
+        .footer span {
+            color: #D4AF37;
+            font-size: 50px;
+        }
+
+        .dec {
+            font-size: 20px;
+            word-spacing: 10px;
+            color: white;
+        }
+
+        .aaa {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            gap: 30vh;
+        }
+
+        .all-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 2vh;
+        }
+
+        .all-links h2 {
+            color: white;
+        }
+
+        .all-links ul {
+            display: flex;
+            flex-direction: column;
+            list-style: none;
+        }
+
+        .all-links ul li {
+            color: white;
+            cursor: pointer;
+        }
+
+        .all-links ul li:hover {
+            color: #D4AF37;
+
+        }
+
+        .hours {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 5vh;
+        }
+
+        .hours h2 {
+            color: white;
+        }
+
+        .hours ol {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 2vh;
+        }
+
+        .hours ol li {
+            color: white;
+        }
+
+
+        .cont {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 3vh;
+        }
+
+        .cont h2 {
+            color: white;
+        }
+
+        .cont ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .cont ul li {
+            list-style: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        .cont ul li:hover {
+            color: #D4AF37;
+        }
+
+
+        /* Mobile */
+
+        @media (max-width: 576px) {
+
+            .all h1{
+                font-size: xxx-large;
+            }
+
+            .all h2 {
+                font-size: xx-large;
+            }
+
+            .about h1 {
+                font-size: xx-large;
+            }
+
+            .about h5 {
+                font-size: medium;
+            }
+
+            .gallery h1 {
+                font-size: xx-large;
+            }
+            .gallery h4{
+                font-size: larger;
+            }
+
+            .btns button {
+              height: 5vh;
+              width: 40vw;
+              font-size: x-small;
+            }
+
+            .btns {
+                flex-direction: column;
+                gap: 30px;
+                order: 3;
+            }
+            .about h1{
+                text-align: center;
+            }
+            .hero {
+                flex-direction: column;
+            }
+
+            nav ul {
+                display: none;
+            }
+            nav {
+                gap: 30px;
+            }
+
+            .icon {
+                display: block;
+                font-size: 20px;
+            }
+
+            .heads {
+                height: auto;
+                width: 80vw;
+            }
+
+            .heads h1 {
+                line-height: 100px;
+                font-size: 7vmin;
+                text-align: center;
+                line-height: 15vh;
+            }
+
+            .image {
+                width: 70vw;
+                height: 60vh;
+                margin-top: 10vh;
+            }
+
+            .all p {
+                text-align: center;
+            }
+
+            .gallery p {
+                text-align: center;
+            }
+
+            .about h5 {
+                text-align: center;
+            }
+
+            .dec {
+                text-align: center;
+            }
+
+            .aaa {
+                gap: 5vw;
+            }
+
+            .cont li {
+                font-size: 10px;
+            }
+
+            .all h2 {
+                text-align: center;
+            }
+
+            .about h1 {
+                text-align: center;
+            }
+
+            .rew h1 {
+                text-align: center;
+            }
+
+            .gallery h4 {
+                text-align: center;
+            }
+
+            .all-links,
+            .cont,
+            .hours {
+                text-align: center;
+            }
+
+            .all-box {
+                flex-direction: column;
+            }
+
+            .box1,
+            .box2,
+            .box3,
+            .box4,
+            .box5,
+            .box6 {
+                height: auto;
+                width: 50vw;
+                overflow: hidden;
+            }
+
+            .alll {
+                grid-template-columns: 50vw;
+            }
+
+            .food,
+            .delivery,
+            .chef,
+            .amazing {
+                width: 50vw;
+                height: 40vh;
+                text-align: center;
+            }
+        }
+
+
+        /* Tablet */
+
+        @media (min-width:577px) and (max-width: 780px) {
+
+            .hero {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .about h5 {
+                text-align: center;
+            }
+
+            .all p {
+                text-align: center;
+            }
+
+            .all-links {
+
+                text-align: center;
+            }
+
+            .chef {
+                text-align: center;
+            }
+
+            .hours {
+                text-align: center;
+            }
+
+            .orders p {
+                text-align: center;
+            }
+
+            .hours ol li {
+                list-style: none;
+            }
+
+            .cont ul li {
+                font-size: xx-small;
+            }
+
+
+            .heads {
+                height: auto;
+                width: 80vw;
+            }
+
+            .heads h1 {
+                line-height: 100px;
+                font-size: 8vmin;
+                text-align: center;
+                line-height: 20vh;
+            }
+
+            .image {
+                width: 70vw;
+                height: 50vh;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            nav {
+                flex-direction: row;
+            }
+
+            nav button {
+                margin-left: 50vw;
+            }
+
+            .icon {
+                display: block;
+                font-size: 20px;
+            }
+
+            .aaa {
+                gap: 10vh;
+            }
+
+        }
+
+
+        /* Laptop */
+
+        @media (min-width:781px) and (max-width: 991px) {
+            .about h5 {
+                text-align: center;
+                flex-wrap: wrap;
+            }
+
+            nav ul li {
+                font-size: 15px;
+            }
+
+            .heads h1 {
+                font-size: 5vmin;
+            }
+
+            .image {
+                height: 60vh;
+            }
+
+            .aaa {
+                gap: 20vh;
+            }
+
+
+        }
+
+
+        /* Desktop */
+
+        @media (min-width:992px) and (max-width: 1200px) {
+            .heads h1 {
+                font-size: 40px
+            }
+
+            .btns button {
+                padding: 10px 30px;
+            }
+
+            .all-links {
+
+                text-align: center;
+            }
+
+            .aaa {
+                gap: 10vh;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <span>
+            Foodie
+        </span>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Menu</li>
+            <li>Chef</li>
+            <li>Gallery</li>
+            <li>Help</li>
+        </ul>
+        <button>Reserve</button>
+
+        <div class="icon">
+            ☰
+        </div>
+
+    </nav>
+
+    <div class="hero">
+        <div class="heads">
+            <h1>Welcome to Foodie</h1>
+            <h1> Taste the Best Food</h1>
+            <h1>Fresh ingredients...</h1>
+            <div class="btns">
+                <button>See Menu</button>
+                <button>Book Table</button>
+            </div>
+        </div>
+        <div class="image">
+            <img src="pizza.png" alt="Image">
+
+        </div>
+
+    </div>
+    <div class="orders">
+        <div class="all">
+            <h1>Our Menu</h1>
+            <p>Our Menu is one of the most famous menues in the World.</p>
+            <h2>Our Special Dishes</h2>
+        </div>
+        <div class="all-box">
+            <div class="box1">
+                <img class="img1" src="Gemini_Generated_Image_42f2eb42f2eb42f2.png" alt="image">
+                <div class="hasnain">
+                    <h3>🍔 Crispy Zinger Burger</h3>
+                    <h6>Crispy chicken with cheese and fresh veggies.</h6>
+                    <div class="price">
+                        <p>★★★★★</p>
+                        <p>10.99$</p>
+                    </div>
+                    <button>Order Now</button>
+                </div>
+            </div>
+            <div class="box2">
+                <img class="img2" src="Gemini_Generated_Image_4wleb34wleb34wle.png" alt="image">
+                <div class="hasnain">
+                    <h3>🥗 Classic Caesar Salad</h3>
+                    <h6>Fresh lettuce with grilled chicken and parmesan.</h6>
+                    <div class="price">
+                        <p>★★★★★</p>
+                        <p>9.99$</p>
+                    </div>
+                    <button>Order Now</button>
+                </div>
+            </div>
+            <div class="box3">
+                <img class="img3" src="Gemini_Generated_Image_fbeterfbeterfbet.png" alt="image">
+                <div class="hasnain">
+                    <h3>🍕 Margherita Pizza</h3>
+                    <h6>Fresh mozzarella, basil, and tomato sauce.</h6>
+                    <div class="price">
+                        <p>★★★★★</p>
+                        <p>12.99$</p>
+                    </div>
+                    <button>Order Now</button>
+                </div>
+            </div>
+            <div class="box4">
+                <img class="img4" src="Gemini_Generated_Image_kgrn46kgrn46kgrn.png" alt="image">
+                <div class="hasnain">
+                    <h3>🍝 Creamy Alfredo Pasta</h3>
+                    <h6>Creamy pasta topped with parmesan cheese.</h6>
+                    <div class="price">
+                        <p>★★★★★</p>
+                        <p>13.99$</p>
+                    </div>
+                    <button>Order Now</button>
+                </div>
+            </div>
+            <div class="box5">
+                <img class="img5" src="Gemini_Generated_Image_s11c5ys11c5ys11c.png" alt="image">
+                <div class="hasnain">
+                    <h3>🥩 Grilled Ribeye Steak</h3>
+                    <h6>Juicy grilled steak with garlic butter.</h6>
+                    <div class="price">
+                        <p>★★★★★</p>
+                        <p>18.99$</p>
+                    </div>
+                    <button>Order Now</button>
+                </div>
+            </div>
+            <div class="box6">
+                <img class="img6" src="Gemini_Generated_Image_w48ixuw48ixuw48i.png" alt="image">
+                <div class="hasnain">
+                    <h3>🍣 Premium Sushi Platter</h3>
+                    <h6>Fresh sushi served with soy and wasabi.</h6>
+                    <div class="price">
+                        <p>★★★★★</p>
+                        <p>16.99$</p>
+                    </div>
+                    <button>Order Now</button>
+                </div>
+            </div>
+        </div>
+        <div class="about">
+            <h1>
+                Why Choose Us
+            </h1>
+            <h5>We are committed to delivering delicious meals with exceptional quality and service.</h5>
+            <div class="alll">
+                <div class="food">
+                    <span>🍽️</span>
+                    <h2>Fresh Ingredients</h2>
+                    <p>Only the freshest ingredients in every meal.</p>
+                </div>
+                <div class="chef">
+                    <span>👨‍🍳 </span>
+                    <h2>Expert Chefs</h2>
+                    <p>Prepared by skilled and experienced chefs.</p>
+                </div>
+                <div class="delivery">
+                    <span>🚚</span>
+                    <h2>Expert Chefs</h2>
+                    <p>Quick, friendly service with every order.</p>
+                </div>
+                <div class="amazing">
+                    <span>🏡</span>
+                    <h2>Cozy Atmosphere</h2>
+                    <p>A warm and welcoming place to enjoy your meal.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="rew">
+            <h1>Customer Reviews</h1>
+            <h3>What Our Customers Say</h3>
+            <div class="all-rew">
+                <div class="rew1">
+                    <span>⭐⭐⭐⭐⭐</span>
+                    <h4> 👤 Emma Wilson </h4>
+                    <p> "Amazing food and excellent service."</p>
+                </div>
+                <div class="rew2">
+                    <span>⭐⭐⭐⭐⭐</span>
+                    <h4>Michael Brown</h4>
+                    <p> "Best pizza I've ever had!"</p>
+                </div>
+                <div class="rew3">
+                    <span>⭐⭐⭐⭐⭐</span>
+                    <h4>Emma Wilson</h4>
+                    <p>"Great atmosphere and friendly staff."</p>
+                </div>
+            </div>
+        </div>
+        <div class="gallery">
+            <h1>Gallery</h1>
+            <h4> Explore Our Restaurant</h4>
+            <p> Delicious food, beautiful interiors,
+                and unforgettable moments.</p>
+            <div class="all-photos">
+                <div class="pht1">
+                    <img src="photo2.png" alt="image">
+                </div>
+                <div class="pht2">
+                    <img src="photo1.png" alt="image">
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="arslan">
+
+            <span>Foodie</span>
+            <div class="dec">
+                Delicious food crafted with passion and served with love.
+            </div>
+            <div class="aaa">
+
+                <div class="all-links">
+                    <h2>Quick Links</h2>
+                    <ul>
+                        <li>Home</li>
+                        <li>About</li>
+                        <li>Chefs</li>
+                        <li>Menu</li>
+                        <li>Gallery</li>
+                    </ul>
+                </div>
+                <div class="hours">
+                    <h2>Opening Hours</h2>
+                    <ol>
+                        <li> Mon–Fri 9AM–10PM </li>
+                        <li> Sat–Sun 10AM–11PM </li>
+                    </ol>
+                </div>
+                <div class="cont">
+                    <h2>Contact</h2>
+                    <ul>
+                        <li>📍 New York, USA </li>
+                        <li> 📞 +1 234 567 890 </li>
+                        <li> ✉ contact@foodie.com </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <p class="p1">
+            <b>Facebook</b>
+            •
+            <b> Instagram </b>
+            •
+            <b> YouTube</b>
+        </p>
+        <p class="p2"> &copy; 2026 Foodie. All Rights Reserved. </p>
+
+    </div>
+</body>
+
+</html>
